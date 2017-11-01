@@ -37,7 +37,7 @@ public interface StudentMapper
     		@Result(property="gpa", column="gpa"),
     		@Result(property="courses", column="npm",
     				javaType = List.class,
-    				many=@Many(select="selectCOurses"))
+    				many=@Many(select="selectCourses"))
     })
     List<StudentModel> selectAllStudents ();	
 
