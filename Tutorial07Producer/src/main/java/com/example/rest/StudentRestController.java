@@ -28,4 +28,6 @@ public class StudentRestController {
 		List<StudentModel> students = studentService.selectAllStudents();
 	    return students;
 	}
+	
+	
 }
