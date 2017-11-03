@@ -27,7 +27,5 @@ public class StudentRestController {
 	public List<StudentModel> viewall () {
 		List<StudentModel> students = studentService.selectAllStudents();
 	    return students;
-	}
-	
-	
+	}	
 }

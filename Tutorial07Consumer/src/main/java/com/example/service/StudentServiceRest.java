@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import com.example.dao.StudentDAO;
 import com.example.model.StudentModel;
-import groovy.util.logging.Slf4j;
+
+import lombok.extern.slf4j.Slf4j;
+
 
 @Slf4j
 @Service
@@ -17,14 +19,14 @@ public class StudentServiceRest implements StudentService{
 	
 	@Override
 	public StudentModel selectStudent(String npm) {
-		//log.info("REST - select student with npm {}", npm);
+		log.info("REST - select student with npm {}", npm);
 		return studentDAO.selectStudent(npm);
 	}
 	
 	@Override
 	public List<StudentModel> selectAllStudents() {
-		//log.info("REST - select all students");
-		return null;
+		log.info("REST - select all students");
+		return studentDAO.selectAllStudents();
 	}
 	
 	@Override
@@ -36,6 +38,6 @@ public class StudentServiceRest implements StudentService{
 	@Override
 	public void updateStudent(StudentModel student) {}
 	
-	/*@Override
-	public void addCourse(String npm, String idCourse) {}*/	
+	@Override
+	public void addCourse(String npm, String idCourse) {}	
 }
